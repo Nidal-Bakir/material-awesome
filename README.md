@@ -20,7 +20,7 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) foll
 
 ```
 sudo add-apt-repository ppa:regolith-linux/unstable -y
-sudo apt install awesome fonts-roboto rofi picom i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight kde-spectacle nautilus xfce4-power-manager pnmixer network-manager-applet gnome-polkit -y
+sudo apt install awesome fonts-roboto rofi picom i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight kde-spectacle nautilus xfce4-power-manager pnmixer network-manager-applet -y
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
@@ -67,7 +67,7 @@ Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-
 First install `qt5-style-plugins` (debian) | `qt5-styleplugins` (arch) and add this to the bottom of your `/etc/environment`
 
 ```bash
-XDG_CURRENT_DESKTOP=Unity
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
