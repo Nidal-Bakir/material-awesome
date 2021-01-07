@@ -267,6 +267,14 @@ local globalKeys =
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
+   awful.key(
+    {altkey},
+    'XF86MonBrightnessUp',
+    function()
+      awful.spawn('xbacklight -inc 1')
+    end,
+    {description = '+1%', group = 'hotkeys'}
+  ),
   awful.key(
     {},
     'XF86MonBrightnessDown',
@@ -274,6 +282,14 @@ local globalKeys =
       awful.spawn('xbacklight -dec 10')
     end,
     {description = '-10%', group = 'hotkeys'}
+  ),
+  awful.key(
+    {altkey},
+    'XF86MonBrightnessDown',
+    function()
+      awful.spawn('xbacklight -dec 1')
+    end,
+    {description = '-1%', group = 'hotkeys'}
   ),
   -- ALSA volume control
   awful.key(
