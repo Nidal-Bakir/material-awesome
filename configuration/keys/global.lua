@@ -42,14 +42,7 @@ local globalKeys =
     end,
     {description = 'show main menu', group = 'awesome'}
   ),
-  awful.key(
-    {altkey},
-    'space',
-    function()
-      _G.screen.primary.left_panel:toggle(true)
-    end,
-    {description = 'show main menu', group = 'awesome'}
-  ),
+  
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(
     {altkey},
@@ -347,6 +340,9 @@ local globalKeys =
     awful.client.movetoscreen,
     {description = 'move window to next screen', group = 'client'}
   ),
+  
+  
+  --[[
   -- Open default program for tag
   awful.key(
     {modkey},
@@ -361,7 +357,23 @@ local globalKeys =
         )
     end,
     {description = 'open default program for tag/workspace', group = 'tag'}
+  ),--]]
+  
+  
+  
+  -- Open telegram app
+  awful.key(
+    {modkey},
+    't',
+    function()
+      awful.spawn('telegram-desktop')
+    end,
+    {description = 'open telegram app', group = 'hotkeys'}
   ),
+  
+  
+  
+  
   -- Custom hotkeys
   -- vfio integration
   awful.key(
@@ -371,21 +383,14 @@ local globalKeys =
       awful.util.spawn_with_shell('vm-attach attach')
     end
   ),
-  -- Lutris hotkey
-  awful.key(
-    {modkey},
-    'g',
-    function()
-      awful.util.spawn_with_shell('lutris')
-    end
-  ),
   -- System Monitor hotkey
   awful.key(
     {modkey},
     'm',
     function()
-      awful.util.spawn_with_shell('mate-system-monitor')
-    end
+      awful.util.spawn_with_shell('gnome-system-monitor')
+    end,
+    {description = 'gnome-system-monitor', group = 'hotkeys'}
   ),
   -- Kill VLC
   awful.key(
@@ -403,15 +408,6 @@ local globalKeys =
       awful.util.spawn(apps.default.files)
     end,
     {description = 'filebrowser', group = 'hotkeys'}
-  ),
-  -- Emoji Picker
-  awful.key(
-    {modkey},
-    'a',
-    function()
-      awful.util.spawn_with_shell('ibus emoji')
-    end,
-    {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
   )
 )
 
